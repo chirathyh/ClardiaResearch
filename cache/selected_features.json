@@ -1,0 +1,1 @@
+{"hypertension": ["Age", "BMI", "apg1", "apg3", "apg5", "apg7", "apg8", "SysAmp", "ArtStiff", "RT", "apg9", "BodyFat"], "diabetes": ["Age", "apg4", "PI_Sys", "AI", "adj_AI"]}
