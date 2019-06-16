@@ -82,7 +82,10 @@ def experiment_3 (features):
     df = shuffle(df, random_state=7)
     y = df['Label']
     y = y.replace(2, 1)
-    x = df[features]
+    if features == []:
+        x = df.drop(['Hypertension','id','Label'],axis=1)
+    else:
+        x = df[features]
     return x,y  
 
 def hypertension_featureSelect():

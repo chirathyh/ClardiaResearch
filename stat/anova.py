@@ -27,6 +27,11 @@ def anova_test(x,y):
 
 print("\nANOVA: Diabetes vs Healthy ")
 x,y = exp.diabetes_featureSelect()
+
+print(x)
+print(y)
+
+
 diabetes_features = anova_test(x,y)
 
 print("\nANOVA: Hypertension vs Healthy ")
