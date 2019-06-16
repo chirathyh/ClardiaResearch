@@ -74,7 +74,7 @@ print("Truncated SVD took {:.2} s".format(t1 - t0))
 ##########
 f, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(24,6))
 # labels = ['No Fraud', 'Fraud']
-f.suptitle('Clusters using Dimensionality Reduction', fontsize=14)
+f.suptitle('Clusters using Dimensionality Reduction - Full Dataset', fontsize=14)
 
 
 blue_patch = mpatches.Patch(color='#0A0AFF', label='Healthy')
