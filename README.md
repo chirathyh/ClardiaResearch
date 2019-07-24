@@ -7,5 +7,7 @@ The Project focuses on developing a classifier to predict type 2 diabetes using 
 The Original Dataset: 
 Liang,Yongbo,etal."Anew,short-recordedphotoplethysmogramdatasetforbloodpres- sure monitoring in China." Scientific data 5 (2018): 180020.
 
-The main features identified in literature related to the PPG signal have been extracted using the Matlab software. The extracted features are used as the input to the models.
+The main features identified in literature related to the PPG signal have been extracted using the Matlab software. To Run the matlab scripts download the original dataset and run the script to extract features related to Diabetes, Normal and Hypertension patients. 
+
+The extracted features are used as the input to the models.
 
