@@ -1,21 +1,26 @@
 addpath(genpath('lib/'));
 SIGNAL_PATH = '/Users/chirathhettiarachchi/tensorflow/datasets/clardia3/PPG/signals/';
+
+% Patient Info for PPG Signals.
 %subject = csvread('diabetesPatientInfo.csv',1,0);
-subject = csvread('HypertensionPatientInfo.csv',1,0);
+subject  = csvread('HypertensionPatientInfo.csv',1,0);
 %subject = csvread('normalPatientInfo.csv',1,0);
+
 [m,n] = size(subject);
 feature_vector = [];
 disp(m)
 
-
+% Loop over the Patients. 
 for patient = 1:1:m
-    subject_ID = int2str(subject(patient,1));
-    selected = int2str(subject(patient,15));
-    tempSubject = strcat(SIGNAL_PATH,subject_ID,'_',selected,'.txt'); 
-    
-    raw_PPG = load(tempSubject);
+
+    % Load the Signal
+    subject_ID  = int2str(subject(patient,1));
+    selected    = int2str(subject(patient,15));
+    tempSubject = strcat(SIGNAL_PATH,subject_ID,'_',selected,'.txt');  
+    raw_PPG       = load(tempSubject);
+    % Preprocessing - 4th Order Chebyshev Filter 
     new_PPGsignal = preprocessSignal(raw_PPG);
-    PPGsignal = new_PPGsignal;
+    PPGsignal     = new_PPGsignal;
 
     figure
     subplot(4,1,1)
