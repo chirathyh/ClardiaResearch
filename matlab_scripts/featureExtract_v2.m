@@ -8,7 +8,7 @@ feature_vector = [];
 disp(m)
 
 
-for patient = 75:1:m
+for patient = 1:1:m
     subject_ID = int2str(subject(patient,1));
     selected = int2str(subject(patient,15));
     tempSubject = strcat(SIGNAL_PATH,subject_ID,'_',selected,'.txt'); 
