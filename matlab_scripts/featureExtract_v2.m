@@ -52,6 +52,7 @@ for patient = 1:1:m
     ylabel('Amplitude');
     hold on;
 
+    % Detecting the Peaks of the APG Waveform. 
     peak_loc = [];
     peak_val = [];
     trough_loc = [];
