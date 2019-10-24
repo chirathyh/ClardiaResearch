@@ -72,6 +72,7 @@ for patient = 1:1:m
         end
     end
 
+% delete 
 %     for i=1:1:length(peak_loc)
 %          plot(peak_loc(i),peak_val(i),'r.','MarkerSize',12)
 %          hold on;
@@ -81,6 +82,10 @@ for patient = 1:1:m
 %          hold on;
 %     end
 
+    % Find the first three maximum points in desceding order. 
+    % Roughly there will be two peaks in 2.1s APG waveform.
+    % Select the two maximum peaks and then need to find the first occurence of the alpha wave.
+    % max3 used for the second peak detection.
     max_finder = peak_val;
     [max1, ind1] = max(max_finder);
     max_finder(ind1) = -Inf;
@@ -88,12 +93,13 @@ for patient = 1:1:m
     max_finder(ind2) = -Inf;
     [max3, ind3] = max(max_finder);
     
-    
+    % delete. 
     %plot(peak_loc(ind1), max1,'bx','MarkerSize',14);
     %hold on;
     %plot(peak_loc(ind2), max2,'bx','MarkerSize',14);
     %old on;
  
+    % Use a threshold to select the other points. Threhold dependent on the dataset. 
     a = min(peak_loc(ind1),peak_loc(ind2));
     for i=1:1:length(peak_loc)
         if peak_loc(i) > a
@@ -126,6 +132,7 @@ for patient = 1:1:m
         end
     end
     
+    % disregard
     %h = zeros(6,1);
     %h(1) = plot(a, new_dy2(a),'r.','MarkerSize',12);
     %h(2) = plot(b, new_dy2(b),'b.','MarkerSize',12);
@@ -146,10 +153,9 @@ for patient = 1:1:m
     hold on;
     plot(f, new_dy2(f),'m.','MarkerSize',12);
     hold on;
-    
-    
-    
-    %Identifying the Second Peak
+   
+    %Identifying the Second Peak of the APG waveform.
+    % Required when calculating the features ex: Peak to Peak
     selected_temp2 = max(peak_loc(ind1),peak_loc(ind2));
     if (a < peak_loc(ind3) && peak_loc(ind3) < selected_temp2) && (max3 > new_dy2(e))
         selected = peak_loc(ind3);
@@ -162,9 +168,12 @@ for patient = 1:1:m
     %legend(h,'a-wave','b-wave','c-wave','d-Wave','e-wave','Diastolic Peak')
     
     %%%% PPG Main Signal %%%%
+    % Feature extraction from the main PPG signal. some points can be infered from the APG waveform. 
     dicro_notch = e;
     dicro_peak = f;
     
+    % find the peaks(1st and second) of the PPG signal.  
+    % Invert the signal to identify the Troughs. 
     PPGsignal = smooth(PPGsignal);
     [ppg_peak_val,ppg_peaks_loc] = findpeaks(PPGsignal);
     negPPGsignal = -1 * PPGsignal;
@@ -193,6 +202,7 @@ for patient = 1:1:m
         end
     end
 
+    % Detrending the PPG not done in this project. 
     temp_PPGsignal = detrend(PPGsignal,'linear');
     PPGsignal = temp_PPGsignal;
     
@@ -203,6 +213,7 @@ for patient = 1:1:m
     ylabel('Amplitude');
     hold on;
     
+    % delete
     %h = zeros(4,1);
     %h(1) = plot(dicro_notch, PPGsignal(dicro_notch),'b.','MarkerSize',14);
     %h(2) = plot(dicro_peak, PPGsignal(dicro_peak),'k.','MarkerSize',14);
@@ -220,9 +231,12 @@ for patient = 1:1:m
     end
     plot(low2, PPGsignal(low2),'g.','MarkerSize',14);
     
+    % delete
     %legend(h,'Dicrotic Notch','Diastolic Peak','PPG Signal Start','Systolic Peak')
     
-    % FEATURE CALCULATION
+    %%% Morphological Feature Calculation. %%%
+    % Use the extracted points if the two waveforms to claculate features. 
+    
     %Heights of the a,b,c,d,e waves
     A = new_dy2(a);
     B = new_dy2(b);
@@ -283,12 +297,11 @@ for patient = 1:1:m
         AreaRatio = -1;
     end
     
-    %pulse width related features
+    %pulse width related features => can be incoporated in future. 
     %halfAmp = SysAmp / 2;
     %index = find(PPGsignal == halfAmp);
     %disp(index)
-    
-    
+   
     extractedFeatures = [B/A C/A D/A E/A (B-C-D-E)/A (B-E)/A (B-C-D)/A (C+D-B)/A (a1-a) SysAmp TotArea AreaRatio PI PI_Sys AI adj_AI ArtStiff RT];    
     temp = [subject(patient,:) extractedFeatures ];
     feature_vector = [feature_vector ; temp];
