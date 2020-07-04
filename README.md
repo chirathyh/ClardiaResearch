@@ -15,8 +15,10 @@ The extracted features are used as the input to the models.
 # AIME 2019
 The code related to the paper: 
 Hettiarachchi, Chirath, and Charith Chitraranjan. "A Machine Learning Approach to Predict Diabetes Using Short Recorded Photoplethysmography and Physiological Characteristics." Conference on Artificial Intelligence in Medicine in Europe. Springer, Cham, 2019.
+
 Link: https://link.springer.com/chapter/10.1007/978-3-030-21642-9_41
 
 # FBG PREDICTION
 Code related to the Fasting Blood Glucose Prediction using PPG signals. 
+
 Note: Data is not provided. 
