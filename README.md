@@ -3,9 +3,9 @@
 
 # Introduction
 
-![alt text](https://github.com/chirathyh/clardia---Type-2-Diabetes-Prediction-Using-Short-PPG-Signals-and-Physiological-Characteristics-/blob/master/extra/blob1.png)
+The repo contains the code related to the project: The Project focuses on developing a classifier to predict type 2 diabetes using short recorded PPG signals and physiological characteristics.
 
-The Project focuses on developing a classifier to predict type 2 diabetes using short recorded PPG signals and physiological characteristics.
+![alt text](https://github.com/chirathyh/clardia---Type-2-Diabetes-Prediction-Using-Short-PPG-Signals-and-Physiological-Characteristics-/blob/master/extra/blob1.png)
 
 The Original Dataset: 
 Liang,Yongbo,etal."Anew,short-recordedphotoplethysmogramdatasetforbloodpres- sure monitoring in China." Scientific data 5 (2018): 180020.
