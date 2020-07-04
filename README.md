@@ -2,6 +2,9 @@
 # Chirath Hettiarachchi 
 
 # Introduction
+
+![Drag Racing](extras/Picture 1.jpg)
+
 The Project focuses on developing a classifier to predict type 2 diabetes using short recorded PPG signals and physiological characteristics.
 
 The Original Dataset: 
