@@ -3,10 +3,7 @@
 
 # Introduction
 
-![alt text](https://github.com/[chirathyh]/[clardia---Type-2-Diabetes-Prediction-Using-Short-PPG-Signals-and-Physiological-Characteristics-]/extra/[master]/blob1.png?raw=true)
-
 ![alt text](https://github.com/chirathyh/clardia---Type-2-Diabetes-Prediction-Using-Short-PPG-Signals-and-Physiological-Characteristics-/blob/master/extra/blob1.png)
-
 
 The Project focuses on developing a classifier to predict type 2 diabetes using short recorded PPG signals and physiological characteristics.
 
