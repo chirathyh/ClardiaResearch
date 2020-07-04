@@ -9,10 +9,10 @@ Main Dataset: Liang,Yongbo,etal."Anew,short-recordedphotoplethysmogramdatasetfor
 The extracted PPG features are included in the input folder.
 The Matlab scripts to extract the PPG features are in the github repo.
 Four experiments are carried out.
-    - experiment1.py: Healthy vs Diabetes only.
-    - experiment2.py: Healthy vs Diabetes only and Diabetes with Prehypertension.
-    - experiment3.py: Healthy vs Diabetes only and Diabetes with Prehypertension / Hypertension.
-    - experiment4.py: Healthy vs Diabetes only and Diabetes with Prehypertension / Hypertension. (Only PPG Features, Age matched)
+* experiment1.py: Healthy vs Diabetes only.
+* experiment2.py: Healthy vs Diabetes only and Diabetes with Prehypertension.
+* experiment3.py: Healthy vs Diabetes only and Diabetes with Prehypertension / Hypertension.
+* experiment4.py: Healthy vs Diabetes only and Diabetes with Prehypertension / Hypertension. (Only PPG Features, Age matched)
 
 The classifiers used are in classifiers.py, where parameter tuning and model evaluation is also carried out.
 
