@@ -3,7 +3,7 @@
 
 # Introduction
 
-This repository contains the code related to the project: The Project focuses on developing a classifier to predict type 2 diabetes using short recorded PPG signals and physiological characteristics.
+This repository contains the code related to the project: Use of Machine Learning for the Prediction of Diabetes from Photoplethysmography (PPG) Measurements & Physiological Characteristics.
 
 ![alt text](https://github.com/chirathyh/clardia---Type-2-Diabetes-Prediction-Using-Short-PPG-Signals-and-Physiological-Characteristics-/blob/master/extra/blob1.png)
 
