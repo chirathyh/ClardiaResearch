@@ -1,4 +1,4 @@
-# clardia---Type-2-Diabetes-Prediction-Using-Short-PPG-Signals-and-Physiological-Characteristics-
+# Clardia: Type-2 Diabetes Prediction Using Short-PPG Signals and Physiological Characteristics.
 # Chirath Hettiarachchi 
 
 # Introduction
